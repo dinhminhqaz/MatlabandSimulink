@@ -1,0 +1,26 @@
+syms t
+disp('Choose a positive direction that is identical with the rocket motion');
+disp('The origin is the ground');
+disp('Apply the Newton second law for the rocket');
+disp('m*dv/dt = -v0*dm/dt - mg');
+k=input('Burning reaction of fuel dm/dt = ');
+m0=input('Initial Mass m0 = ');
+y0=input('Initial position y0 = ');
+v0=input('Initial velocity v0 = ');
+g=9.81;
+v=v0*log(m0/(m0-k*t))-g*t;
+t1= m0/k;
+disp('Acceleration a=');
+a=diff(v,1);
+disp(a);
+disp('Rockets motion equation y = ');
+y=y0+int(v);
+disp(y);
+disp('The rocket runs out of fuel at t=');
+disp(t1);
+disp('At this time, the rocket is out of space and have no motion');
+ezplot(t,y);
+title('Rockets motion graph');
+xlabel('Time t');
+ylabel('Position y');
+grid on;

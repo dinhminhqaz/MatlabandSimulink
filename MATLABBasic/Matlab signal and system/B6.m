@@ -1,0 +1,10 @@
+t=-1:0.01:1;
+f=5;
+j=100;%1000,10000
+c=cos(2*pi*j*t);
+x=sin(2*pi*f*t);
+y=c.*x;
+figure(1),plot(t,y);
+figure(2),plotspec(x,Ts);
+figure(3),plotspec(c,Ts);
+figure(4),plotspec(y,Ts);
